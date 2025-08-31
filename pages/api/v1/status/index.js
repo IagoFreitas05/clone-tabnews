@@ -7,11 +7,11 @@ export default async function status(request, response) {
   const databaseVersionValue = databaseVersionResult.rows[0].server_version;
 
   const databaseMaxConnectionsResult = await database.query(
-    "SHOW max_connections"
+    "SHOW max_connections",
   );
 
   const databaseMaxConnectionsValue = Number(
-    databaseMaxConnectionsResult.rows[0].max_connections
+    databaseMaxConnectionsResult.rows[0].max_connections,
   );
 
   const databaseName = process.env.POSTGRES_DB;
