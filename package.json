@@ -4,7 +4,7 @@
   "description": "Clone for tabnews application developed in the curso.dev",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run services:up && npm run services:wait:database && npm run migrations:up && next dev",
+    "dev": "npm run services:up && npm run services:wait:database && npm run migrations:up && next dev; npm run services:stop",
     "posttest": " npm run services:stop",
     "services:up": "docker compose -f infra/compose.yml up -d",
     "services:down": "docker compose -f infra/compose.yml down",
