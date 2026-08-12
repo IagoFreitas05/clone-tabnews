@@ -26,7 +26,7 @@ function UpdatedAt() {
 }
 
 function DatabaseStatus() {
-  const { data, isLoading } = fetchData();
+  const { data, isLoading } = useFetchData();
   if (!isLoading && data) {
     return (
       <>
