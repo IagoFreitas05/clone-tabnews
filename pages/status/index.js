@@ -6,7 +6,7 @@ async function fetchApi(key) {
   return responseBody;
 }
 
-function fetchData() {
+function useFetchData() {
   const data = useSWR("api/v1/status", fetchApi, {
     refreshInterval: 2000,
   });
@@ -14,7 +14,7 @@ function fetchData() {
 }
 
 function UpdatedAt() {
-  const { data, isLoading } = fetchData();
+  const { data, isLoading } = useFetchData();
   if (!isLoading && data) {
     return (
       <p>
